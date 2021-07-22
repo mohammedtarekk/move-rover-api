@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-app.get('/starts', (req, res) => {
+app.get('/start', (req, res) => {
     const result = getInitialCoordniates();
     res.send(result);
 });
