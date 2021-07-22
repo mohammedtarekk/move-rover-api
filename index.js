@@ -3,8 +3,8 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-app.get('/start', (req, res) => {
-    const result = getInitialCoordniates();
+app.get('/initialize', (req, res) => {
+    const result = initialize();
     res.send(result);
 });
 
@@ -47,12 +47,15 @@ const obstacles = [
 ];
 
 // rover coordinates
-var x = 4;
-var y = 2;
-var theta = 0;
+var x;
+var y;
+var theta;
 
 // This function will be called once after the api is fetched
-function getInitialCoordniates(){
+function initialize(){
+    x = 4;
+    y = 2;
+    theta = 0;
     return [x, y, directionsMap[theta]]
 }
 
